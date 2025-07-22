@@ -1,46 +1,112 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fake User-Agent Generator</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      text-align: center;
-      padding: 50px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f1fff2;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
-    .box {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #aaa;
-      display: inline-block;
-      max-width: 700px;
-    }
-    #ua {
-      font-size: 14px;
-      margin: 20px 0;
-      word-wrap: break-word;
-    }
-    button {
-      padding: 10px 20px;
-      border: none;
+    header {
       background: #28a745;
       color: white;
-      border-radius: 5px;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .container {
+      flex: 1;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .generator-box {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 700px;
+      text-align: center;
+    }
+    .ua-output {
+      font-size: 14px;
+      margin: 20px 0;
+      word-break: break-word;
+      padding: 15px;
+      background: #e9ffe7;
+      border: 1px solid #c8e6c9;
+      border-radius: 8px;
+    }
+    button {
+      padding: 12px 25px;
+      background: #28a745;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
       cursor: pointer;
+      transition: background 0.3s;
     }
     button:hover {
       background: #218838;
     }
+    .ad-placeholder {
+      margin: 30px 0;
+      width: 100%;
+      max-width: 700px;
+      height: 90px;
+      background: #dfffe0;
+      border: 2px dashed #bbb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #888;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+    footer {
+      background: #e6ffe7;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #444;
+    }
+    footer a {
+      color: #28a745;
+      text-decoration: none;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h2>Fake User-Agent Generator</h2>
-    <div id="ua">Click the button to generate</div>
-    <button onclick="generateUA()">Generate</button>
-  </div>  <script>
+  <header>🛠️ Fake User-Agent Generator</header>
+  <div class="container">
+    <div class="generator-box">
+      <h2>Click to Generate Fake User-Agent</h2>
+      <div class="ua-output" id="ua">No User-Agent generated yet.</div>
+      <button onclick="generateUA()">Generate</button>
+    </div>
+
+    <div class="ad-placeholder">
+      [ Ad Placement Here ]
+    </div>
+  </div>
+
+  <footer>
+    Developed by <a href="https://instagram.com/nurulnc100" target="_blank">@nurulnc100</a> &copy; 2025
+  </footer>
+
+  <script>
     const browsers = ["Chrome", "Firefox", "Safari", "Edge", "Opera"];
     const osList = [
       "Windows NT 10.0",
@@ -76,5 +142,6 @@
 
       document.getElementById("ua").innerText = ua;
     }
-  </script></body>
+  </script>
+</body>
 </html>
